@@ -1,0 +1,74 @@
+[
+    {
+        "definitions" : [
+            {
+                "column" : 11,
+                "file" : "/home/kisung/Desktop/filling/src/cppfill_HardImpute.cpp",
+                "kind" : 6,
+                "line" : 8,
+                "name" : "cpp_HardImpute_thrs(arma::vec, const double, const int, const int, const int)",
+                "parent_name" : "",
+                "usr" : "c:@F@cpp_HardImpute_thrs#$@N@arma@C@Col>#d#1d#1I#1I#1I#"
+            },
+            {
+                "column" : 12,
+                "file" : "/home/kisung/Desktop/filling/src/cppfill_HardImpute.cpp",
+                "kind" : 6,
+                "line" : 23,
+                "name" : "cpp_HardImpute(arma::mat &, arma::mat &, arma::vec &, const double, const int, arma::cube &, const int)",
+                "parent_name" : "",
+                "usr" : "c:@F@cpp_HardImpute#&$@N@arma@C@Mat>#d#S0_#&$@N@arma@C@Col>#d#1d#1I#&$@N@arma@C@Cube>#d#1I#"
+            }
+        ],
+        "file" : "/home/kisung/Desktop/filling/src/cppfill_HardImpute.cpp",
+        "file_last_write" : 1512864192
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 11,
+                "file" : "/home/kisung/Desktop/filling/src/cppfill_SVT.cpp",
+                "kind" : 6,
+                "line" : 8,
+                "name" : "cpp_nSVD_thrs(arma::vec, const double, const int, const int)",
+                "parent_name" : "",
+                "usr" : "c:@F@cpp_nSVD_thrs#$@N@arma@C@Col>#d#1d#1I#1I#"
+            },
+            {
+                "column" : 11,
+                "file" : "/home/kisung/Desktop/filling/src/cppfill_SVT.cpp",
+                "kind" : 6,
+                "line" : 27,
+                "name" : "cpp_nSVD(arma::mat &, arma::mat &, arma::mat &, const double, const double, const int)",
+                "parent_name" : "",
+                "usr" : "c:@F@cpp_nSVD#&$@N@arma@C@Mat>#d#S0_#S0_#1d#1d#1I#"
+            }
+        ],
+        "file" : "/home/kisung/Desktop/filling/src/cppfill_SVT.cpp",
+        "file_last_write" : 1512784298
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 11,
+                "file" : "/home/kisung/Desktop/filling/src/cppfill_SoftImpute.cpp",
+                "kind" : 6,
+                "line" : 8,
+                "name" : "cpp_SoftImpute_thrs(arma::vec, const double, const int, const int)",
+                "parent_name" : "",
+                "usr" : "c:@F@cpp_SoftImpute_thrs#$@N@arma@C@Col>#d#1d#1I#1I#"
+            },
+            {
+                "column" : 12,
+                "file" : "/home/kisung/Desktop/filling/src/cppfill_SoftImpute.cpp",
+                "kind" : 6,
+                "line" : 27,
+                "name" : "cpp_SoftImpute(arma::mat &, arma::mat &, arma::vec &, const double, const int, arma::mat &)",
+                "parent_name" : "",
+                "usr" : "c:@F@cpp_SoftImpute#&$@N@arma@C@Mat>#d#S0_#&$@N@arma@C@Col>#d#1d#1I#S0_#"
+            }
+        ],
+        "file" : "/home/kisung/Desktop/filling/src/cppfill_SoftImpute.cpp",
+        "file_last_write" : 1512842605
+    }
+]

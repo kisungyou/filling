@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "Package: filling\nType: Package\nTitle: Matrix Completion, Imputation, and Inpainting Methods\nVersion: 0.1.0\nAuthors@R: person(given=\"Kisung\",family=\"You\",role=c(\"aut\",\"cre\"),email=\"kyou@nd.edu\",comment=c(ORCID=\"0000-0002-8584-459X\"))\nDescription: Filling in the missing entries of a partially observed data is one of fundamental problems in various disciplines of mathematical science. For many cases, data at our interests have canonical form of matrix in that the problem is posed upon a matrix with missing values to fill in the entries under preset assumptions and models. We provide a collection of methods from multiple disciplines under Matrix Completion, Imputation, and Inpainting. See Davenport and Romberg (2016) <doi:10.1109/JSTSP.2016.2539100> for an overview of the topic.\nLicense: GPL (>=3)\nEncoding: UTF-8\nLazyData: true\nDepends:  R (>= 2.10)\nImports: stats, CVXR, Rcpp, Rdpack, ROptSpace, RSpectra, nabor\nLinkingTo: Rcpp, RcppArmadillo\nRdMacros: Rdpack\nRoxygenNote: 6.0.1\n",
+    "created" : 1512964691240.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "31837370",
+    "id" : "3B35A16C",
+    "lastKnownWriteTime" : 1512880562,
+    "last_content_update" : 1512880562,
+    "path" : "~/Desktop/filling/DESCRIPTION",
+    "project_path" : "DESCRIPTION",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "dcf"
+}

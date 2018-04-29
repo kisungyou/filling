@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "#' Matrix Completion, Imputation, and Inpainting Methods\n#'\n#' Filling in the missing entries of a partially observed data is one of fundamental problems\n#' in various disciplines of mathematical science. For many cases, data at our interests\n#' have canonical form of matrix in that the problem is posed upon a matrix with missing values\n#' to fill in the entries under preset assumptions and models.\n#' We provide a collection of methods from multiple disciplines under Matrix Completion, Imputation, and Inpainting.\n#'\n#'\n#' @docType package\n#' @name filling-package\n#' @import CVXR\n#' @import Rdpack\n#' @import nabor\n#' @import RSpectra\n#' @importFrom ROptSpace OptSpace\n#' @importFrom Rcpp evalCpp\n#' @importFrom stats median rbinom rnorm lm\n#' @useDynLib filling\nNULL\n",
+    "created" : 1512964699088.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "685034205",
+    "id" : "BFF0A16",
+    "lastKnownWriteTime" : 1512964753,
+    "last_content_update" : 1512964753085,
+    "path" : "~/Desktop/filling/R/filling-package.R",
+    "project_path" : "R/filling-package.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
