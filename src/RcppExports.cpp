@@ -23,22 +23,6 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// cpp_SoftImpute
-arma::cube cpp_SoftImpute(arma::mat& X, arma::mat& idmat, arma::vec& lambdas, const double tol, const int maxiter, arma::mat& Zinit);
-RcppExport SEXP _filling_cpp_SoftImpute(SEXP XSEXP, SEXP idmatSEXP, SEXP lambdasSEXP, SEXP tolSEXP, SEXP maxiterSEXP, SEXP ZinitSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< arma::mat& >::type X(XSEXP);
-    Rcpp::traits::input_parameter< arma::mat& >::type idmat(idmatSEXP);
-    Rcpp::traits::input_parameter< arma::vec& >::type lambdas(lambdasSEXP);
-    Rcpp::traits::input_parameter< const double >::type tol(tolSEXP);
-    Rcpp::traits::input_parameter< const int >::type maxiter(maxiterSEXP);
-    Rcpp::traits::input_parameter< arma::mat& >::type Zinit(ZinitSEXP);
-    rcpp_result_gen = Rcpp::wrap(cpp_SoftImpute(X, idmat, lambdas, tol, maxiter, Zinit));
-    return rcpp_result_gen;
-END_RCPP
-}
 // cpp_nSVD
 arma::mat cpp_nSVD(arma::mat& X, arma::mat& idmat, arma::mat& Minit, const double lambda, const double tol, const int maxiter);
 RcppExport SEXP _filling_cpp_nSVD(SEXP XSEXP, SEXP idmatSEXP, SEXP MinitSEXP, SEXP lambdaSEXP, SEXP tolSEXP, SEXP maxiterSEXP) {
@@ -55,11 +39,27 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// cpp_SoftImpute
+arma::cube cpp_SoftImpute(arma::mat& X, arma::mat& idmat, arma::vec& lambdas, const double tol, const int maxiter, arma::mat& Zinit);
+RcppExport SEXP _filling_cpp_SoftImpute(SEXP XSEXP, SEXP idmatSEXP, SEXP lambdasSEXP, SEXP tolSEXP, SEXP maxiterSEXP, SEXP ZinitSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat& >::type X(XSEXP);
+    Rcpp::traits::input_parameter< arma::mat& >::type idmat(idmatSEXP);
+    Rcpp::traits::input_parameter< arma::vec& >::type lambdas(lambdasSEXP);
+    Rcpp::traits::input_parameter< const double >::type tol(tolSEXP);
+    Rcpp::traits::input_parameter< const int >::type maxiter(maxiterSEXP);
+    Rcpp::traits::input_parameter< arma::mat& >::type Zinit(ZinitSEXP);
+    rcpp_result_gen = Rcpp::wrap(cpp_SoftImpute(X, idmat, lambdas, tol, maxiter, Zinit));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_filling_cpp_HardImpute", (DL_FUNC) &_filling_cpp_HardImpute, 7},
-    {"_filling_cpp_SoftImpute", (DL_FUNC) &_filling_cpp_SoftImpute, 6},
     {"_filling_cpp_nSVD", (DL_FUNC) &_filling_cpp_nSVD, 6},
+    {"_filling_cpp_SoftImpute", (DL_FUNC) &_filling_cpp_SoftImpute, 6},
     {NULL, NULL, 0}
 };
 

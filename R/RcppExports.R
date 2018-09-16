@@ -5,11 +5,11 @@ cpp_HardImpute <- function(X, idmat, lambdas, tol, maxiter, SoftRes, rk) {
     .Call('_filling_cpp_HardImpute', PACKAGE = 'filling', X, idmat, lambdas, tol, maxiter, SoftRes, rk)
 }
 
-cpp_SoftImpute <- function(X, idmat, lambdas, tol, maxiter, Zinit) {
-    .Call('_filling_cpp_SoftImpute', PACKAGE = 'filling', X, idmat, lambdas, tol, maxiter, Zinit)
-}
-
 cpp_nSVD <- function(X, idmat, Minit, lambda, tol, maxiter) {
     .Call('_filling_cpp_nSVD', PACKAGE = 'filling', X, idmat, Minit, lambda, tol, maxiter)
+}
+
+cpp_SoftImpute <- function(X, idmat, lambdas, tol, maxiter, Zinit) {
+    .Call('_filling_cpp_SoftImpute', PACKAGE = 'filling', X, idmat, lambdas, tol, maxiter, Zinit)
 }
 

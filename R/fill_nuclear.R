@@ -14,6 +14,7 @@
 #'
 #'
 #' @examples
+#' \dontrun{
 #' ## load image data of 'lena64'
 #' data(lena64)
 #'
@@ -27,7 +28,7 @@
 #' par(mfrow=c(1,2), pty="s")
 #' image(A, col=gray((0:100)/100), axes=FALSE, main="5% missing")
 #' image(filled$X, col=gray((0:100)/100), axes=FALSE, main="processed")
-#'
+#' }
 #'
 #' @param A an \eqn{(n\times p)} partially observed matrix.
 #' @param tolerance level of tolerance for entrywise equality condition.

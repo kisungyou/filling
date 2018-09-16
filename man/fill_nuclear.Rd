@@ -34,6 +34,7 @@ for modeling purpose, we adopted closeness parameter \code{tolerance} for equali
 \pkg{CVXR} package was used in implementation. Computational efficiency may not be guaranteed for large data matrix.
 }
 \examples{
+\dontrun{
 ## load image data of 'lena64'
 data(lena64)
 
@@ -47,7 +48,7 @@ filled <- fill.nuclear(A)
 par(mfrow=c(1,2), pty="s")
 image(A, col=gray((0:100)/100), axes=FALSE, main="5\% missing")
 image(filled$X, col=gray((0:100)/100), axes=FALSE, main="processed")
-
+}
 
 }
 \references{
