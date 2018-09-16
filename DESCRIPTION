@@ -7,8 +7,8 @@ Description: Filling in the missing entries of a partially observed data is one 
 License: GPL (>=3)
 Encoding: UTF-8
 LazyData: true
-Depends:  R (>= 2.10)
-Imports: stats, CVXR, Rcpp, Rdpack, ROptSpace, RSpectra, nabor
+Depends: R (>= 2.14.0)
+Imports: stats, CVXR, Rcpp, Rdpack, ROptSpace, RSpectra, nabor, utils
 LinkingTo: Rcpp, RcppArmadillo
 RdMacros: Rdpack
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.0

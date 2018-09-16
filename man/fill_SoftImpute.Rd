@@ -4,7 +4,8 @@
 \alias{fill.SoftImpute}
 \title{SoftImpute : Spectral Regularization}
 \usage{
-fill.SoftImpute(A, lambdas = c(10, 1, 0.1), maxiter = 100, tol = 0.001)
+fill.SoftImpute(A, lambdas = c(10, 1, 0.1), maxiter = 100,
+  tol = 0.001)
 }
 \arguments{
 \item{A}{an \eqn{(n\times p)} partially observed matrix.}

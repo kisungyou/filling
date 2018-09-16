@@ -3,8 +3,6 @@
 # 02. aux.rndmissing
 
 
-
-
 # 02. aux.rndmissing ------------------------------------------------------
 #' Randomly assign NAs to the data matrix with probability \code{x}
 #'
