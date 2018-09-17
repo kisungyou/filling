@@ -28,6 +28,7 @@ where \eqn{P_{\Omega}(X)=X_{ij}} if it is observed, or \eqn{0} otherwise.
 It performs iterative shrinkage on newly computed singular values.
 }
 \examples{
+\dontrun{
 ## load image data of 'lena128'
 data(lena128)
 
@@ -45,6 +46,7 @@ image(A, col=gray((0:100)/100), axes=FALSE, main="5\% missing")
 image(fill1$X, col=gray((0:100)/100), axes=FALSE, main="lbd=0.1")
 image(fill2$X, col=gray((0:100)/100), axes=FALSE, main="lbd=1")
 image(fill3$X, col=gray((0:100)/100), axes=FALSE, main="lbd=10")
+}
 
 }
 \references{

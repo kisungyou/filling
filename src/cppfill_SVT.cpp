@@ -48,7 +48,6 @@ arma::mat cpp_nSVD(arma::mat& X, arma::mat& idmat, arma::mat& Minit,
   arma::mat V;
 
   while (increment > tol){
-    Rcout << "iter : " << iter << std::endl;
     // 4-1. replace missing entries, oh yeah.
     Xhat(idx_obss) = X(idx_obss);
     Xhat(idx_miss) = Mold(idx_miss);

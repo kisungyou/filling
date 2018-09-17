@@ -16,6 +16,7 @@
 #' }
 #'
 #' @examples
+#' \dontrun{
 #' ## load image data of 'lena128'
 #' data(lena128)
 #'
@@ -33,6 +34,7 @@
 #' image(fill1$X, col=gray((0:100)/100), axes=FALSE, main="lbd=0.1")
 #' image(fill2$X, col=gray((0:100)/100), axes=FALSE, main="lbd=1")
 #' image(fill3$X, col=gray((0:100)/100), axes=FALSE, main="lbd=10")
+#' }
 #'
 #' @references
 #' \insertRef{cai_singular_2010}{filling}

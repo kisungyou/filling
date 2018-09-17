@@ -6,6 +6,7 @@
 #' which was independently developed by the maintainer. See \code{\link[ROptSpace]{OptSpace}} for more details.
 #'
 #' @examples
+#' \dontrun{
 #' ## load image data of 'lena64'
 #' data(lena64)
 #'
@@ -21,6 +22,7 @@
 #' image(A, col=gray((0:100)/100), axes=FALSE, main="5% missing")
 #' image(filled5$X, col=gray((0:100)/100), axes=FALSE, main="rank 5")
 #' image(filled10$X, col=gray((0:100)/100), axes=FALSE, main="rank 10")
+#' }
 #'
 #'
 #' @param A an \eqn{(n\times p)} partially observed matrix.

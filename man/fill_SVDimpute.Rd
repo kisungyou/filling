@@ -28,6 +28,7 @@ each row vector is regressed upon top-\eqn{k} right singular vectors. Missing en
 then filled with predicted estimates.
 }
 \examples{
+\dontrun{
 ## load image data of 'lena128'
 data(lena128)
 
@@ -46,6 +47,7 @@ image(A, col=gray((0:100)/100), axes=FALSE, main="5\% missing")
 image(fill1$X, col=gray((0:100)/100), axes=FALSE, main="5 regressors")
 image(fill2$X, col=gray((0:100)/100), axes=FALSE, main="25 regressors")
 image(fill3$X, col=gray((0:100)/100), axes=FALSE, main="50 regressors")
+}
 
 
 }

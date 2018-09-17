@@ -16,6 +16,7 @@
 #' }
 #'
 #' @examples
+#' \dontrun{
 #' ## load image data of 'lena128'
 #' data(lena128)
 #'
@@ -34,6 +35,7 @@
 #' image(fill1$X, col=gray((0:100)/100), axes=FALSE, main="5 regressors")
 #' image(fill2$X, col=gray((0:100)/100), axes=FALSE, main="25 regressors")
 #' image(fill3$X, col=gray((0:100)/100), axes=FALSE, main="50 regressors")
+#' }
 #'
 #'
 #' @references

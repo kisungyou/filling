@@ -10,7 +10,7 @@
   this.version = packageVersion("filling")
 
   ## Print on Screen
-  packageStartupMessage("** filling : Matrix Completion, Imputation, and Inpainting Methods")
+  packageStartupMessage("** filling    : Matrix Completion, Imputation, and Inpainting Methods")
   packageStartupMessage("** Version    : ",this.version," (",this.year,")",sep="")
   packageStartupMessage("** Maintainer : Kisung You (kyou@nd.edu)")
   packageStartupMessage("**")

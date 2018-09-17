@@ -28,6 +28,7 @@ singular value decompositions. Original implementation is borrowed from \pkg{ROp
 which was independently developed by the maintainer. See \code{\link[ROptSpace]{OptSpace}} for more details.
 }
 \examples{
+\dontrun{
 ## load image data of 'lena64'
 data(lena64)
 
@@ -43,6 +44,7 @@ par(mfrow=c(1,3), pty="s")
 image(A, col=gray((0:100)/100), axes=FALSE, main="5\% missing")
 image(filled5$X, col=gray((0:100)/100), axes=FALSE, main="rank 5")
 image(filled10$X, col=gray((0:100)/100), axes=FALSE, main="rank 10")
+}
 
 
 }
