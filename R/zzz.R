@@ -10,11 +10,17 @@
   this.version = packageVersion("filling")
 
   ## Print on Screen
-  packageStartupMessage("** filling    : Matrix Completion, Imputation, and Inpainting Methods")
-  packageStartupMessage("** Version    : ",this.version," (",this.year,")",sep="")
-  packageStartupMessage("** Maintainer : Kisung You (kyou@nd.edu)")
+  packageStartupMessage("** --------------------------------------------------------- **")
+  packageStartupMessage("** filling")
+  packageStartupMessage("**  - Matrix Completion, Imputation, and Inpainting Methods")
+  packageStartupMessage("**")
+  packageStartupMessage("** Version    : ",this.version,"      (",this.year,")",sep="")
+  packageStartupMessage("** Maintainer : Kisung You (kyoustat@gmail.com)")
   packageStartupMessage("**")
   packageStartupMessage("** Please share any bugs or suggestions to the maintainer.")
+  packageStartupMessage("** --------------------------------------------------------- **")
+
+
 }
 
 .onUnload <- function(libpath) {

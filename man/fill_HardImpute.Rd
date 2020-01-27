@@ -4,8 +4,13 @@
 \alias{fill.HardImpute}
 \title{HardImpute : Generalized Spectral Regularization}
 \usage{
-fill.HardImpute(A, lambdas = c(10, 1, 0.1), maxiter = 100,
-  tol = 0.001, rk = (min(dim(A)) - 1))
+fill.HardImpute(
+  A,
+  lambdas = c(10, 1, 0.1),
+  maxiter = 100,
+  tol = 0.001,
+  rk = (min(dim(A)) - 1)
+)
 }
 \arguments{
 \item{A}{an \eqn{(n\times p)} partially observed matrix.}

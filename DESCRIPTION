@@ -1,8 +1,8 @@
 Package: filling
 Type: Package
 Title: Matrix Completion, Imputation, and Inpainting Methods
-Version: 0.2.0
-Authors@R: person(given="Kisung",family="You",role=c("aut","cre"),email="kyou@nd.edu",comment=c(ORCID="0000-0002-8584-459X"))
+Version: 0.2.1
+Authors@R: person(given="Kisung",family="You",role=c("aut","cre"),email="kyoustat@gmail.com",comment=c(ORCID="0000-0002-8584-459X"))
 Description: Filling in the missing entries of a partially observed data is one of fundamental problems in various disciplines of mathematical science. For many cases, data at our interests have canonical form of matrix in that the problem is posed upon a matrix with missing values to fill in the entries under preset assumptions and models. We provide a collection of methods from multiple disciplines under Matrix Completion, Imputation, and Inpainting. See Davenport and Romberg (2016) <doi:10.1109/JSTSP.2016.2539100> for an overview of the topic.
 License: GPL (>=3)
 Encoding: UTF-8
@@ -11,4 +11,4 @@ Depends: R (>= 2.14.0)
 Imports: stats, CVXR, Rcpp, Rdpack, ROptSpace, RSpectra, nabor, utils
 LinkingTo: Rcpp, RcppArmadillo
 RdMacros: Rdpack
-RoxygenNote: 6.1.0
+RoxygenNote: 7.0.2

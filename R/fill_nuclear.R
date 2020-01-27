@@ -70,8 +70,15 @@ fill.nuclear <- function(A, tolerance=1e-3){
   X   <- CVXR::Variable(n,p)
   obj <- CVXR::norm_nuc(X)
 
-  masked_X = mul_elemwise(NonMissing, X)
-  masked_M = mul_elemwise(NonMissing, M)
+  if (utils::packageVersion("CVXR") < "1.0.0"){
+    masked_X = mul_elemwise(NonMissing, X)
+    masked_M = mul_elemwise(NonMissing, M)
+  } else {
+    masked_X = CVXR::multiply(NonMissing, X)
+    masked_M = CVXR::multiply(NonMissing, M)
+  }
+
+
   abs_diff = abs(masked_X-masked_M)
   constr   = list(abs_diff <= tolerance)
 
