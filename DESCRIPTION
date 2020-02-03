@@ -8,7 +8,7 @@ License: GPL (>=3)
 Encoding: UTF-8
 LazyData: true
 Depends: R (>= 2.14.0)
-Imports: stats, CVXR, Rcpp, Rdpack, ROptSpace, RSpectra, nabor, utils
+Imports: CVXR (>= 1.0), Rcpp, Rdpack, ROptSpace, RSpectra, nabor, stats, utils
 LinkingTo: Rcpp, RcppArmadillo
 RdMacros: Rdpack
 RoxygenNote: 7.0.2
