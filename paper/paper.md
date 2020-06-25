@@ -6,7 +6,7 @@ authors:
 affiliations:
 - index: 1
   name: Department of Applied and Computational Mathematics and Statistics, University of Notre Dame
-title: "filling: Matrix Completion, Imputation, and Inpainting in R"
+title: "filling: Matrix Completion in R"
 tags:
 - R
 - matrix completion
@@ -18,7 +18,7 @@ bibliography: paper.bib
 
 # Summary
 
-a
+In applied mathematics, matrix completion is a thematic program to estimate unobserved, missing entries of a partially observed matrix [@cai_singular_2010].
 
 # Acknowledgments
 
