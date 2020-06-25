@@ -18,7 +18,7 @@ bibliography: paper.bib
 
 # Summary
 
-In applied mathematics, matrix completion is a thematic program to estimate unobserved, missing entries of a partially observed matrix [@cai_singular_2010].
+Matrix completion problem is a thematic program to estimate unobserved, missing entries of a partially observed matrix [@li_survey_2019]. One popular example is the Netflix Prize in which preference of a movie for each user needs to be predicted given movie ratings data. 
 
 # Acknowledgments
 
