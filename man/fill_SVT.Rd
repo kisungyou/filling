@@ -41,11 +41,13 @@ fill2 <- fill.SVT(A, lambda=1.0)
 fill3 <- fill.SVT(A, lambda=10)
 
 ## visualize
+opar <- par(no.readonly=TRUE)
 par(mfrow=c(2,2), pty="s")
 image(A, col=gray((0:100)/100), axes=FALSE, main="5\% missing")
 image(fill1$X, col=gray((0:100)/100), axes=FALSE, main="lbd=0.1")
 image(fill2$X, col=gray((0:100)/100), axes=FALSE, main="lbd=1")
 image(fill3$X, col=gray((0:100)/100), axes=FALSE, main="lbd=10")
+par(opar)
 }
 
 }

@@ -4,7 +4,9 @@
 \name{lena128}
 \alias{lena128}
 \title{lena image at size of \eqn{(128 \times 128)}}
-\format{matrix of size \eqn{(128\times 128)}}
+\format{
+matrix of size \eqn{(128\times 128)}
+}
 \source{
 \href{http://sipi.usc.edu/database/?volume=misc}{USC SIPI Image Database}
 }

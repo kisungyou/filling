@@ -20,7 +20,7 @@
 #'
 #' ## transform 5% of entries into missing
 #' set.seed(5)
-#' A <- aux.rndmissing(lena128, x=0.10)
+#' A <- aux.rndmissing(lena128, x=0.05)
 #'
 #' ## apply the method with 3 different control 'eta'
 #' fill1 <- fill.USVT(A, eta=0.01)
@@ -28,11 +28,13 @@
 #' fill3 <- fill.USVT(A, eta=0.99)
 #'
 #' ## visualize only the last ones from each run
+#' opar <- par(no.readonly=TRUE)
 #' par(mfrow=c(2,2), pty="s")
 #' image(A, col=gray((0:100)/100), axes=FALSE, main="5% missing")
 #' image(fill1$Ahat, col=gray((0:100)/100), axes=FALSE, main="eta=0.01")
 #' image(fill2$Ahat, col=gray((0:100)/100), axes=FALSE, main="eta=0.5")
 #' image(fill3$Ahat, col=gray((0:100)/100), axes=FALSE, main="eta=0.99")
+#' par(opar)
 #' }
 #'
 #' @references

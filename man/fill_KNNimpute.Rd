@@ -40,11 +40,13 @@ fill2 <- fill.KNNimpute(A, k=25)
 fill3 <- fill.KNNimpute(A, k=50)
 
 ## visualize only the last ones from each run
+opar <- par(no.readonly=TRUE)
 par(mfrow=c(2,2), pty="s")
 image(A, col=gray((0:100)/100), axes=FALSE, main="5\% missing")
 image(fill1$X, col=gray((0:100)/100), axes=FALSE, main="5-neighbor")
 image(fill2$X, col=gray((0:100)/100), axes=FALSE, main="25-neighbor")
 image(fill3$X, col=gray((0:100)/100), axes=FALSE, main="50-neighbor")
+par(opar)
 
 }
 \references{

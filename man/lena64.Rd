@@ -4,7 +4,9 @@
 \name{lena64}
 \alias{lena64}
 \title{lena image at size of \eqn{(64 \times 64)}}
-\format{matrix of size \eqn{(64\times 64)}}
+\format{
+matrix of size \eqn{(64\times 64)}
+}
 \source{
 \href{http://sipi.usc.edu/database/?volume=misc}{USC SIPI Image Database}
 }

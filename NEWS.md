@@ -1,5 +1,8 @@
-# News for Package 'filling'
+# filling 0.2.2
 
-### Changes in version 0.2.1
-  * added a `NEWS.md` file to track changes to the package.
-  * modification according to changes from `CVXR` package.
+* Fixed graphic parameter setting for CRAN.
+
+# filling 0.2.1
+
+* Added a `NEWS.md` file to track changes to the package.
+* Modification according to changes from `CVXR` package.

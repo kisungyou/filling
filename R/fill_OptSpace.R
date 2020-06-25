@@ -14,14 +14,16 @@
 #' A <- aux.rndmissing(lena64, x=0.05)
 #'
 #' ## apply the method with different rank assumptions
-#' filled5  <- fill.OptSpace(A, ropt=5)
 #' filled10 <- fill.OptSpace(A, ropt=10)
+#' filled20 <- fill.OptSpace(A, ropt=20)
 #'
 #' ## visualize
+#' opar <- par(no.readonly=TRUE)
 #' par(mfrow=c(1,3), pty="s")
 #' image(A, col=gray((0:100)/100), axes=FALSE, main="5% missing")
-#' image(filled5$X, col=gray((0:100)/100), axes=FALSE, main="rank 5")
 #' image(filled10$X, col=gray((0:100)/100), axes=FALSE, main="rank 10")
+#' image(filled20$X, col=gray((0:100)/100), axes=FALSE, main="rank 20")
+#' par(opar)
 #' }
 #'
 #'

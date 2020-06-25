@@ -25,9 +25,11 @@
 #' filled <- fill.nuclear(A)
 #'
 #' ## visualize
+#' opar <- par(no.readonly=TRUE)
 #' par(mfrow=c(1,2), pty="s")
 #' image(A, col=gray((0:100)/100), axes=FALSE, main="5% missing")
 #' image(filled$X, col=gray((0:100)/100), axes=FALSE, main="processed")
+#' par(opar)
 #' }
 #'
 #' @param A an \eqn{(n\times p)} partially observed matrix.

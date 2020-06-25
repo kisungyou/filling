@@ -49,11 +49,13 @@ fill2 <- fill.HardImpute(A, lambdas=c(500,100,50), rk=50)
 fill3 <- fill.HardImpute(A, lambdas=c(500,100,50), rk=100)
 
 ## visualize only the last ones from each run
+opar <- par(no.readonly=TRUE)
 par(mfrow=c(2,2), pty="s")
 image(A, col=gray((0:100)/100), axes=FALSE, main="5\% missing")
 image(fill1$X[,,3], col=gray((0:100)/100), axes=FALSE, main="Rank 10")
 image(fill2$X[,,3], col=gray((0:100)/100), axes=FALSE, main="Rank 50")
 image(fill3$X[,,3], col=gray((0:100)/100), axes=FALSE, main="Rank 100")
+par(opar)
 
 }
 \references{

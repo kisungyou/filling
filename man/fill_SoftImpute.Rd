@@ -38,11 +38,13 @@ A <- aux.rndmissing(lena128, x=0.05)
 fill <- fill.SoftImpute(A, lambdas=c(500,100,50))
 
 ## visualize
+opar <- par(no.readonly=TRUE)
 par(mfrow=c(2,2), pty="s")
 image(A, col=gray((0:100)/100), axes=FALSE, main="5\% missing")
 image(fill$X[,,1], col=gray((0:100)/100), axes=FALSE, main="lambda=500")
 image(fill$X[,,2], col=gray((0:100)/100), axes=FALSE, main="lambda=100")
 image(fill$X[,,3], col=gray((0:100)/100), axes=FALSE, main="lambda=50")
+par(opar)
 
 }
 \references{

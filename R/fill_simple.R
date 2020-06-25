@@ -26,11 +26,13 @@
 #' fill3 <- fill.simple(A, method="random")
 #'
 #' ## visualize
+#' opar <- par(no.readonly=TRUE)
 #' par(mfrow=c(2,2), pty="s")
 #' image(A, col=gray((0:100)/100), axes=FALSE, main="original")
 #' image(fill1$X, col=gray((0:100)/100), axes=FALSE, main="method:mean")
 #' image(fill2$X, col=gray((0:100)/100), axes=FALSE, main="method:median")
 #' image(fill3$X, col=gray((0:100)/100), axes=FALSE, main="method:random")
+#' par(opar)
 #'
 #' @references
 #' \insertRef{gelman_data_2007}{filling}

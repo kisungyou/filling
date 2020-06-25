@@ -4,7 +4,9 @@
 \name{lena256}
 \alias{lena256}
 \title{lena image at size of \eqn{(256 \times 256)}}
-\format{matrix of size \eqn{(256\times 256)}}
+\format{
+matrix of size \eqn{(256\times 256)}
+}
 \source{
 \href{http://sipi.usc.edu/database/?volume=misc}{USC SIPI Image Database}
 }
