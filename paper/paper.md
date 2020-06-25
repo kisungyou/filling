@@ -18,7 +18,7 @@ bibliography: paper.bib
 
 # Summary
 
-Matrix completion problem is a thematic program to estimate unobserved, missing entries of a partially observed matrix [@li_survey_2019]. One popular example is the Netflix Prize in which preference of a movie for each user needs to be predicted given movie ratings data. 
+Matrix completion problem is a thematic program to estimate missing entries of a partially observed matrix [@li_survey_2019]. One popular example is the Netflix Prize in which preference of a movie for each user needs to be predicted given movie ratings data. Estimating unobserved entries of a matrix has also been called as _inpainting_ *inpainting_star* **twostar**
 
 # Acknowledgments
 
