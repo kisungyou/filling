@@ -38,7 +38,7 @@ A <- aux.rndmissing(lena128, x=0.05)
 ## apply the method
 fill1 <- fill.SVT(A, lambda=0.1)
 fill2 <- fill.SVT(A, lambda=1.0)
-fill3 <- fill.SVT(A, lambda=10)
+fill3 <- fill.SVT(A, lambda=20)
 
 ## visualize
 opar <- par(no.readonly=TRUE)

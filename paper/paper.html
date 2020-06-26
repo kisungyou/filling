@@ -371,63 +371,19 @@ summary {
 <div id="summary" class="section level1">
 <h1>Summary</h1>
 <p><em>Matrix completion</em> problem is a thematic program to estimate missing entries of a partially observed matrix <span class="citation">(Li et al. 2019)</span>. One popular example is the Netflix Prize in which preference of a movie for each user needs to be predicted given movie ratings data. The problem has been called in different names, including <em>inpainting</em> <span class="citation">(Elharrouss et al. 2020)</span> in image processing and <em>imputation</em> <span class="citation">(Lin and Tsai 2020)</span> in Statistics communities due to its versatility in applications such as collaborative filtering, sensor localization, system identification, and so on <span class="citation">(Candes and Plan 2010)</span>.</p>
-<p>Given a partially observed matrix <span class="math inline">\(M \in \mathbb{R}^{n\times p}\)</span>, the goal is to solve for <span class="math inline">\(X \in \mathbb{R}^{n\times p}\)</span> with constraints <span class="math inline">\(X_{i,j} = M_{i,j}\)</span> for an observed entry <span class="math inline">\((i,j)\)</span>. The problem is underdetermined due to the fact that any arbitrary values can be assigned to unobserved entries. Therefore, the problem requires additional assumptions to bound the number of degrees of freedom for <span class="math inline">\(X\)</span>. Numerous ideas and algorithms have been proposed in the literature and we refer to aforementioned reviews for interested readers <span class="citation">(Li et al. 2019; Elharrouss et al. 2020; Lin and Tsai 2020)</span>.</p>
-<p>We propose <code>filling</code>, an R package <span class="citation">(R Core Team 2020)</span> to host a suite of 9 popular algorithms for the matrix completion problem. Since many algorithms solve optimization problems in an iterative manner, all but one functions are written in <code>C++</code> and accessed via an interface by <code>Rcpp</code> <span class="citation">(Eddelbuettel and François 2011)</span>. <code>RcppArmadillo</code> <span class="citation">(Eddelbuettel and Sanderson 2014)</span> enables to utilize <code>armadillo</code> library <span class="citation">(Sanderson and Curtin 2016)</span> for numerical linear algebra operations in <code>C++</code>.</p>
-<table style="width:96%;">
-<caption>Benchmark results of qckitfastq, which uses RSeqAn, and ShortRead, which does not against a test file from each package.</caption>
-<colgroup>
-<col width="21%"></col>
-<col width="15%"></col>
-<col width="18%"></col>
-<col width="12%"></col>
-<col width="13%"></col>
-<col width="14%"></col>
-</colgroup>
-<thead>
-<tr class="header">
-<th align="center">File</th>
-<th align="center">Package</th>
-<th align="left">replications</th>
-<th align="left">elapsed</th>
-<th align="right">user.self</th>
-<th align="center">sys.self</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center"><strong>E-MTAB-1147</strong></td>
-<td align="center">ShortRead</td>
-<td align="left">100</td>
-<td align="left">13.3</td>
-<td align="right">11.58</td>
-<td align="center">1.37</td>
-</tr>
-<tr class="even">
-<td align="center"></td>
-<td align="center">qckitfastq</td>
-<td align="left">100</td>
-<td align="left">5.159</td>
-<td align="right">4.902</td>
-<td align="center">0.091</td>
-</tr>
-<tr class="odd">
-<td align="center"><strong>test.fq.gz</strong></td>
-<td align="center">ShortRead</td>
-<td align="left">100</td>
-<td align="left">6.612</td>
-<td align="right">5.739</td>
-<td align="center">0.567</td>
-</tr>
-<tr class="even">
-<td align="center"></td>
-<td align="center">qckitfastq</td>
-<td align="left">100</td>
-<td align="left">0.195</td>
-<td align="right">0.105</td>
-<td align="center">0.019</td>
-</tr>
-</tbody>
-</table>
+<p>Given a partially observed matrix <span class="math inline">\(M \in \mathbb{R}^{n\times p}\)</span>, the goal is to solve for <span class="math inline">\(X \in \mathbb{R}^{n\times p}\)</span> with constraints <span class="math inline">\(X_{i,j} \approx M_{i,j}\)</span> for an observed entry <span class="math inline">\((i,j)\)</span>. The problem is underdetermined due to the fact that any arbitrary values can be assigned to unobserved entries. Therefore, the problem requires additional assumptions to bound the number of degrees of freedom for <span class="math inline">\(X\)</span>. Numerous ideas and algorithms have been proposed in the literature and we refer to aforementioned reviews for interested readers <span class="citation">(Li et al. 2019; Elharrouss et al. 2020; Lin and Tsai 2020)</span>.</p>
+<p>We propose <code>filling</code>, an R package <span class="citation">(R Core Team 2020)</span> to host a suite of 9 popular algorithms for the matrix completion problem. Functions for algorithms that require heavy computation at each iteration are written in <code>C++</code> and accessed via an interface by <code>Rcpp</code> <span class="citation">(Eddelbuettel and François 2011)</span>. <code>RcppArmadillo</code> <span class="citation">(Eddelbuettel and Sanderson 2014)</span> enables to utilize <code>armadillo</code> library <span class="citation">(Sanderson and Curtin 2016)</span> for numerical linear algebra operations. Algorithms available in <code>filling</code> package are as follows;</p>
+<ul>
+<li><code>fill.HardImpute</code> <span class="citation">(Mazumder, Hastie, and Tibshirani 2010)</span> : Generalized spectral regularization algorithm assumes low-rank structure and applies hard thresholding to prevent the number of non-zero entries to be overestimated.</li>
+<li><code>fill.KNNImpute</code> <span class="citation">(Troyanskaya et al. 2001)</span> : Finds <span class="math inline">\(k\)</span>-nearest neighbor based on observed variables and uses weighted average of nearest elements to fill in the missing entries.</li>
+<li><code>fill.nuclear</code> <span class="citation">(Candès and Recht 2009)</span> : Formulates the low-rank property as minimizing the nuclear norm <span class="math inline">\(\|X\|_* = \sum \sigma_i (X)\)</span> where <span class="math inline">\(\sigma_j (X)\)</span> is <span class="math inline">\(j\)</span>-th singular value of the matrix. Benefit of replacing rank condition with nuclear norm is to adopt convex optimization for computational gain.</li>
+<li><code>fill.OptSpace</code> <span class="citation">(Keshavan, Montanari, and Oh 2010)</span> : The algorithm applies trimming and projection repeatedly on singular value decompositions to reconstruct a low-rank matrix from a small subset of entries.</li>
+<li><code>fill.simple</code> <span class="citation">(Gelman and Hill 2007)</span> : A simple algorithm fills in the missing entries with representative values for each variable such as mean and median of observed entries or simply a random number.</li>
+<li><code>fill.SoftImpute</code> <span class="citation">(Mazumder, Hastie, and Tibshirani 2010)</span> : The problem considered in <code>fill.nuclear</code> is performed using soft-thresholding on a sequence of regularized low-rank solutions.</li>
+<li><code>fill.SVDImpute</code> <span class="citation">(Troyanskaya et al. 2001)</span> : From the fact that singular value decomposition is the best low-rank approximation of a given matrix, the algorithm takes an iterative approach to replace previously estimated missing entries with prediction of each row by top-<span class="math inline">\(k\)</span> right singular vectors.</li>
+<li><code>fill.SVT</code> <span class="citation">(Cai, Candès, and Shen 2010)</span> : Nuclear norm minimization is solved via iteratively thresholding singular values, which originates from the formulation to put sparsity-inducing regularization on the summation of singular values.</li>
+<li><code>fill.USVT</code> <span class="citation">(Chatterjee 2015)</span> : As a matrix estimation method under low-rankness, the algorithm thresholds singular values as much to minimize mean-squared errors.</li>
+</ul>
 </div>
 <div id="acknowledgments" class="section level1">
 <h1>Acknowledgments</h1>
@@ -436,8 +392,17 @@ summary {
 <div id="references" class="section level1 unnumbered">
 <h1>References</h1>
 <div id="refs" class="references">
+<div id="ref-cai_singular_2010">
+<p>Cai, Jian-Feng, Emmanuel J. Candès, and Zuowei Shen. 2010. “A Singular Value Thresholding Algorithm for Matrix Completion.” <em>SIAM Journal on Optimization</em> 20 (4): 1956–82. <a href="https://doi.org/10.1137/080738970">https://doi.org/10.1137/080738970</a>.</p>
+</div>
 <div id="ref-candes_matrix_2010">
 <p>Candes, Emmanuel J, and Yaniv Plan. 2010. “Matrix Completion with Noise.” <em>Proceedings of the IEEE</em> 98 (6): 925–36. <a href="https://doi.org/10.1109/JPROC.2009.2035722">https://doi.org/10.1109/JPROC.2009.2035722</a>.</p>
+</div>
+<div id="ref-candes_exact_2009">
+<p>Candès, Emmanuel J., and Benjamin Recht. 2009. “Exact Matrix Completion via Convex Optimization.” <em>Foundations of Computational Mathematics</em> 9 (6): 717–72. <a href="https://doi.org/10.1007/s10208-009-9045-5">https://doi.org/10.1007/s10208-009-9045-5</a>.</p>
+</div>
+<div id="ref-chatterjee_matrix_2015">
+<p>Chatterjee, Sourav. 2015. “Matrix Estimation by Universal Singular Value Thresholding.” <em>The Annals of Statistics</em> 43 (1): 177–214. <a href="https://doi.org/10.1214/14-AOS1272">https://doi.org/10.1214/14-AOS1272</a>.</p>
 </div>
 <div id="ref-eddelbuettel_rcpp_2011a">
 <p>Eddelbuettel, Dirk, and Romain François. 2011. “<strong>Rcpp</strong> : Seamless <em>R</em> and <em>C</em><em>++</em> Integration.” <em>Journal of Statistical Software</em> 40 (8). <a href="https://doi.org/10.18637/jss.v040.i08">https://doi.org/10.18637/jss.v040.i08</a>.</p>
@@ -448,17 +413,29 @@ summary {
 <div id="ref-elharrouss_image_2020">
 <p>Elharrouss, Omar, Noor Almaadeed, Somaya Al-Maadeed, and Younes Akbari. 2020. “Image Inpainting: A Review.” <em>Neural Processing Letters</em> 51 (2): 2007–28. <a href="https://doi.org/10.1007/s11063-019-10163-0">https://doi.org/10.1007/s11063-019-10163-0</a>.</p>
 </div>
+<div id="ref-gelman_data_2007">
+<p>Gelman, Andrew, and Jennifer Hill. 2007. <em>Data Analysis Using Regression and Multilevel/Hierarchical Models</em>. Analytical Methods for Social Research. Cambridge ; New York: Cambridge University Press.</p>
+</div>
+<div id="ref-keshavan_matrix_2010">
+<p>Keshavan, Raghunandan H., Andrea Montanari, and Sewoong Oh. 2010. “Matrix Completion from a Few Entries.” <em>IEEE Transactions on Information Theory</em> 56 (6): 2980–98. <a href="https://doi.org/10.1109/TIT.2010.2046205">https://doi.org/10.1109/TIT.2010.2046205</a>.</p>
+</div>
 <div id="ref-li_survey_2019">
 <p>Li, Xiao Peng, Lei Huang, Hing Cheung So, and Bo Zhao. 2019. “A Survey on Matrix Completion: Perspective of Signal Processing.” <em>arXiv:1901.10885 [Eess]</em>, May. <a href="http://arxiv.org/abs/1901.10885">http://arxiv.org/abs/1901.10885</a>.</p>
 </div>
 <div id="ref-lin_missing_2020">
 <p>Lin, Wei-Chao, and Chih-Fong Tsai. 2020. “Missing Value Imputation: A Review and Analysis of the Literature (20062017).” <em>Artificial Intelligence Review</em> 53 (2): 1487–1509. <a href="https://doi.org/10.1007/s10462-019-09709-4">https://doi.org/10.1007/s10462-019-09709-4</a>.</p>
 </div>
+<div id="ref-mazumder_spectral_2010">
+<p>Mazumder, Rahul, Trevor Hastie, and Robert Tibshirani. 2010. “Spectral Regularization Algorithms for Learning Large Incomplete Matrices.” <em>Journal of Machine Learning Research</em> 11 (August): 2287–2322.</p>
+</div>
 <div id="ref-rcoreteam_language_2020">
 <p>R Core Team. 2020. <em>R: A Language and Environment for Statistical Computing</em>. Manual. Vienna, Austria: R Foundation for Statistical Computing.</p>
 </div>
 <div id="ref-sanderson_armadillo_2016b">
 <p>Sanderson, Conrad, and Ryan Curtin. 2016. “Armadillo: A Template-Based C++ Library for Linear Algebra.” <em>The Journal of Open Source Software</em> 1 (2): 26. <a href="https://doi.org/10.21105/joss.00026">https://doi.org/10.21105/joss.00026</a>.</p>
+</div>
+<div id="ref-troyanskaya_missing_2001">
+<p>Troyanskaya, O., M. Cantor, G. Sherlock, P. Brown, T. Hastie, R. Tibshirani, D. Botstein, and R. B. Altman. 2001. “Missing Value Estimation Methods for DNA Microarrays.” <em>Bioinformatics</em> 17 (6): 520–25.</p>
 </div>
 </div>
 </div>

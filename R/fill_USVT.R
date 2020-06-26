@@ -10,7 +10,7 @@
 #' @param eta control for thresholding \eqn{\in (0,1)}.
 #'
 #' @return a named list containing \describe{
-#' \item{Ahat}{an \eqn{(n\times p)} estimated matrix after completion.}
+#' \item{X}{an \eqn{(n\times p)} estimated matrix after completion, which is \eqn{\hat{A}} in the equation above.}
 #' }
 #'
 #' @examples
@@ -31,9 +31,9 @@
 #' opar <- par(no.readonly=TRUE)
 #' par(mfrow=c(2,2), pty="s")
 #' image(A, col=gray((0:100)/100), axes=FALSE, main="5% missing")
-#' image(fill1$Ahat, col=gray((0:100)/100), axes=FALSE, main="eta=0.01")
-#' image(fill2$Ahat, col=gray((0:100)/100), axes=FALSE, main="eta=0.5")
-#' image(fill3$Ahat, col=gray((0:100)/100), axes=FALSE, main="eta=0.99")
+#' image(fill1$X, col=gray((0:100)/100), axes=FALSE, main="eta=0.01")
+#' image(fill2$X, col=gray((0:100)/100), axes=FALSE, main="eta=0.5")
+#' image(fill3$X, col=gray((0:100)/100), axes=FALSE, main="eta=0.99")
 #' par(opar)
 #' }
 #'
@@ -105,6 +105,6 @@ fill.USVT <- function(A, eta=0.01){
   ##############################################################
   ## RETURN
   output = list()
-  output$Ahat = result
+  output$X = result
   return(output)
 }
