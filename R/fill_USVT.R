@@ -108,3 +108,36 @@ fill.USVT <- function(A, eta=0.01){
   output$X = result
   return(output)
 }
+
+
+# ## load image data of 'lena128'
+# data(lena128)
+#
+# # some parameters
+# ngray = 64
+# missp = 0.1
+#
+# ## transform 5% of entries into missing
+# set.seed(5)
+# A = lena128
+# B = aux.rndmissing(lena128, x=missp)
+#
+# B1 = fill.simple(B, method="mean")
+# B2 = fill.HardImpute(B, lambdas=c(500,100,50), rk=100)
+# B3 = fill.OptSpace(B, ropt=15)
+# B4 = fill.nuclear(B)
+# B5 = fill.KNNimpute(B, k=5)
+# B6 = fill.SVDimpute(B, k=5)
+#
+# graphics.off()
+# x11(height = 5.5, width=9)
+# par(mfrow=c(2,4), mar=c(2, 2, 2, 2))
+# image(A, col=gray((0:ngray)/ngray), axes=FALSE, main="(A)")
+# image(B, col=gray((0:ngray)/ngray), axes=FALSE, main="(B)")
+# image(B1$X, col=gray((0:ngray)/ngray), axes=FALSE, main="(C)")
+# image(B2$X[,,3], col=gray((0:ngray)/ngray), axes=FALSE, main="(D)")
+# image(B3$X, col=gray((0:ngray)/ngray), axes=FALSE, main="(E)")
+# image(B4$X, col=gray((0:ngray)/ngray), axes=FALSE, main="(F)")
+# image(B5$X, col=gray((0:ngray)/ngray), axes=FALSE, main="(G)")
+# image(B6$X, col=gray((0:ngray)/ngray), axes=FALSE, main="(H)")
+# savePlot(filename="/home/kisung/Desktop/filling/paper/figure-1.png")
