@@ -12,7 +12,7 @@ tags:
 - matrix completion
 - imputation
 - inpainting
-date: 25 June 2020
+date: 29 June 2020
 bibliography: paper.bib
 ---
 
@@ -20,9 +20,9 @@ bibliography: paper.bib
 
 _Matrix completion_ problem is a thematic program to estimate missing entries of a partially observed matrix [@li_survey_2019]. One popular example is the Netflix Prize in which preference of a movie for each user needs to be predicted given movie ratings data. The problem has been called in different names, including _inpainting_ [@elharrouss_image_2020] in image processing and _imputation_ [@lin_missing_2020] in Statistics communities due to its versatility in applications such as collaborative filtering, sensor localization, system identification, and so on [@candes_matrix_2010].
 
-Given a partially observed matrix $M \in \mathbb{R}^{n\times p}$, the goal is to solve for $X \in \mathbb{R}^{n\times p}$ with constraints $X_{i,j} \approx M_{i,j}$ for an observed entry $(i,j)$. The problem is underdetermined due to the fact that any arbitrary values can be assigned to unobserved entries. Therefore, the problem requires additional assumptions to bound the number of degrees of freedom for $X$. Numerous ideas and algorithms have been proposed in the literature and we refer to aforementioned reviews for interested readers [@li_survey_2019; @elharrouss_image_2020; @lin_missing_2020].
+Given a partially observed matrix $M \in \mathbb{R}^{n\times p}$, the goal is to solve for $X \in \mathbb{R}^{n\times p}$ with constraints $X_{i,j} = M_{i,j}$  for an observed entry $(i,j)$. The problem is underdetermined since any arbitrary values can be assigned to unobserved entries. Therefore, the problem requires additional assumptions to bound the number of degrees of freedom for $X$. Numerous ideas and algorithms have been proposed in the literature and we refer to aforementioned reviews for interested readers [@li_survey_2019; @elharrouss_image_2020; @lin_missing_2020].
 
-We propose `filling`, an R package [@rcoreteam_language_2020] to host a suite of 9 popular algorithms for the matrix completion problem. Functions for algorithms that require heavy computation at each iteration are written in `C++` and accessed via an interface by `Rcpp` [@eddelbuettel_rcpp_2011a]. `RcppArmadillo` [@eddelbuettel_rcpparmadillo_2014b] enables to utilize `armadillo` library [@sanderson_armadillo_2016b] for numerical linear algebra operations. Algorithms available in `filling` package are as follows; Figure refernece \ref{fig:example}
+We propose `filling`, an R package [@rcoreteam_language_2020] to host a suite of 9 popular algorithms for the matrix completion problem. Functions for algorithms that require heavy computation at each iteration are written in `C++` and accessed via an interface by `Rcpp` [@eddelbuettel_rcpp_2011a]. `RcppArmadillo` [@eddelbuettel_rcpparmadillo_2014b] enables to utilize `armadillo` library [@sanderson_armadillo_2016b] for numerical linear algebra operations. Algorithms available in `filling` package are as follows; 
 
 * `fill.HardImpute` [@mazumder_spectral_2010] : Generalized spectral regularization algorithm assumes low-rank structure and applies hard thresholding to prevent the number of non-zero entries to be overestimated. 
 * `fill.KNNImpute` [@troyanskaya_missing_2001] : Finds $k$-nearest neighbor based on observed variables and uses weighted average of nearest elements to fill in the missing entries.
@@ -35,15 +35,15 @@ We propose `filling`, an R package [@rcoreteam_language_2020] to host a suite of
 * `fill.USVT` [@chatterjee_matrix_2015] : As a matrix estimation method under low-rankness, the algorithm thresholds singular values as much to minimize mean-squared errors.
 
 
+![\label{fig:example}(A) original Lena image in $(128 \times 128)$ with (B) 10% missing entries and followings are completed matrices by (C) `fill.simple`, (D) `fill.HardImpute`, (E) `fill.OptSpace`, (F) `fill.nuclear`, (G) `fill.KNNimpute`, and (H) `fill.SVDimpute` algorithms.](figure-1.png)
+
+Figure \ref{fig:example} illustrates how some algorithms performs matrix completion on a grayscale image where 10% of the entire entries are randomly masked as `NA`s for missing values. As seen from the figure, different model assumptions and accompanying algorithms fill in a partially observed matrix in a variety of ways. This diversity is one reason we offer `filling` package in order to offer a number of algorithms, which is one of few of its kind. In such line, we plan to continuosly extend the functionality of our package in the future.
 
 
 
-![\label{fig:example}Alluvial plot of changes in curricula by a cohort of art students](figure-1.png)
+# Availability
 
+`filling` is an open source software under the MIT license. The stable release of package can be installed from R console via `install.packages("filling")`. Also, the developmental version can be installed from its GitHub repository by `devtools::install_github("kyoustat/filling")`using `devtools` package [@wickham_devtools_2020].
 
-# Acknowledgments
-
-We appreciate Lizhen Lin and Ick Hoon Jin for supportive environment.
-**twostar for bold** and _underscore for italic_
 
 # References

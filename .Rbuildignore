@@ -4,3 +4,4 @@
 # JOSS paper
 ^paper$
 paper.*
+^LICENSE\.md$
