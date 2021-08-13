@@ -6,6 +6,11 @@
 
 using namespace Rcpp;
 
+#ifdef RCPP_USE_GLOBAL_ROSTREAM
+Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
+Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
+#endif
+
 // cpp_HardImpute
 arma::cube cpp_HardImpute(arma::mat& X, arma::mat& idmat, arma::vec& lambdas, const double tol, const int maxiter, arma::cube& SoftRes, const int rk);
 RcppExport SEXP _filling_cpp_HardImpute(SEXP XSEXP, SEXP idmatSEXP, SEXP lambdasSEXP, SEXP tolSEXP, SEXP maxiterSEXP, SEXP SoftResSEXP, SEXP rkSEXP) {

@@ -1,3 +1,7 @@
+# filling 0.2.3
+
+* Change of maintainer's contact.
+
 # filling 0.2.2
 
 * Fixed graphic parameter setting for CRAN.
